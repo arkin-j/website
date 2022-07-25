@@ -1,1 +1,103 @@
-hello
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>0HTTP</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link
+  rel="stylesheet"
+  href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"
+  title="vue"
+/>
+<link
+  rel="stylesheet"
+  href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/dark.css"
+  title="dark"
+  disabled
+/>
+<link
+  rel="stylesheet"
+  href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/buble.css"
+  title="buble"
+  disabled
+/>
+<link
+  rel="stylesheet"
+  href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/pure.css"
+  title="pure"
+  disabled
+/>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css" />
+</head>
+<body>
+  <div id="app"></div>
+  <script src="//unpkg.com/mermaid/dist/mermaid.min.js"></script>
+  <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
+  <script>
+    const repo='https://github.com/arkin-j/website/';
+    const editRepo='https://github.com/arkin-j/website/-/blob/master/docs/';
+    window.$docsify = {
+      name: '0HTTP',
+      basePath:"docs",
+      // alias:{
+      //   "/.*/_sidebar.md": "/_sidebar.md",
+      // },
+      homepage: 'README.md',
+      // autoHeader: true,
+      loadSidebar: '_sidebar.md',
+      loadNavbar:true,
+      mergeNavbar: true,
+      auto2top:true,
+      subMaxLevel: 4,
+      plantuml: {
+        skin: 'classic',
+      },
+      search: {
+        "noData":"没有结果",
+        "paths":"auto",
+        "placeholder":"输入关键字",
+      },
+      toc: {
+          tocMaxLevel: 2,
+          target: "h2, h3, h4, h5, h6",
+      },
+      frontMatter: true,
+      formatUpdated: '{MM}/{DD} {HH}:{mm}',
+      plugins: [
+        EditOnGithubPlugin.create(repo,editRepo,'编辑'),
+        function (hook,vm){
+          hook.beforeEach(function(html){
+            return (
+               html+
+               '\n----\n' +
+               '[更新时间] {docsify-updated} \n\n'+
+               '<a href="https://docsify.js.org" target="_blank" style="color: inherit; font-weight: normal; text-decoration: none;">Powered by docsify</a>'
+            )
+          })
+        }
+      ]
+    }
+  </script>
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-plugin-toc@1.1.0/dist/docsify-plugin-toc.min.js"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-markdown.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-nginx.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
+
+   <!-- 侧边栏目录折叠 -->
+   <script src="https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+    
+
+  <script>
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('sw.js')
+    }
+  </script>
+</body>
+</html>
