@@ -4,4 +4,5 @@
 - [MySql](/MySql/)
 - [PHP](/PHP/)
   - [array](/PHP/array.md)
+  - [图片上传](/PHP/图片上传.md)
 - [Redis](/Redis/)

@@ -11,24 +11,7 @@
   href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"
   title="vue"
 />
-<link
-  rel="stylesheet"
-  href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/dark.css"
-  title="dark"
-  disabled
-/>
-<link
-  rel="stylesheet"
-  href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/buble.css"
-  title="buble"
-  disabled
-/>
-<link
-  rel="stylesheet"
-  href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/pure.css"
-  title="pure"
-  disabled
-/>
+
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css" />
 </head>
 <body>
@@ -66,7 +49,7 @@
       frontMatter: true,
       formatUpdated: '{MM}/{DD} {HH}:{mm}',
       plugins: [
-        EditOnGithubPlugin.create(repo,editRepo,'编辑'),
+        // EditOnGithubPlugin.create(repo,editRepo,'编辑'),
         function (hook,vm){
           hook.beforeEach(function(html){
             return (
@@ -93,7 +76,8 @@
    <!-- 侧边栏目录折叠 -->
    <script src="https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
     
-
+ <!-- emoji -->
+ <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
   <script>
     if (typeof navigator.serviceWorker !== 'undefined') {
       navigator.serviceWorker.register('sw.js')

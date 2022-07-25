@@ -1,3 +1,0 @@
-- [返回首页](/)
-- [PHP](/PHP/)
-  - [array](/PHP/array.md)
